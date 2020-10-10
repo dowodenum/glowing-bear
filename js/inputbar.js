@@ -793,7 +793,7 @@ weechat.directive('inputBar', function() {
                         setTimeout(function() { document.body.removeChild(toastImgur); }, 4000);
 
                         // Log the delete hash to the console in case the toast was missed.
-                        console.log('An image was uploaded to imgur, https://imgur.com/delete/' + deleteHash + '/');
+                        console.log('An image was uploaded to imgur, delete it with https://imgur.com/delete/' + deleteHash + '/');
                     };
 
                     for (var i = 0; i < e.clipboardData.files.length; i++) {

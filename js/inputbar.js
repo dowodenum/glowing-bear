@@ -285,10 +285,10 @@ weechat.directive('inputBar', function() {
                 // Show toast with delete link
                 var toastDeleted = $compile('<div class="toast toast-short">Successfully deleted.</div>')($scope)[0];
                 document.body.appendChild(toastDeleted);
-                setTimeout(function() { document.body.removeChild(toastDeleted); }, 5000);
+                setTimeout(function() { document.body.removeChild(toastDeleted); }, 3000);
 
-                // Try to remove the toast with the deletion link (it stays 15s
-                // instead of the 5 of the deletion notification, so it could
+                // Try to remove the toast with the deletion link (it stays 4s
+                // instead of the 3 of the deletion notification, so it could
                 // come back beneath it, which would be confusing)
                 var pasteToast = document.querySelector("[data-imgur-deletehash='" + deleteHash + "']");
                 if (!!pasteToast) {
@@ -790,10 +790,10 @@ weechat.directive('inputBar', function() {
                         // Show toast with delete link
                         var toastImgur = $compile('<div class="toast toast-long" data-imgur-deletehash=\'' + deleteHash + '\'>Image uploaded to Imgur. <a id="deleteImgur" ng-click="imgurDelete(\'' + deleteHash + '\')" href="">Delete?</a></div>')($scope)[0];
                         document.body.appendChild(toastImgur);
-                        setTimeout(function() { document.body.removeChild(toastImgur); }, 15000);
+                        setTimeout(function() { document.body.removeChild(toastImgur); }, 4000);
 
                         // Log the delete hash to the console in case the toast was missed.
-                        console.log('An image was uploaded to imgur, delete it with $scope.imgurDelete(\'' + deleteHash + '\')');
+                        console.log('An image was uploaded to imgur, https://imgur.com/delete/' + deleteHash + '/');
                     };
 
                     for (var i = 0; i < e.clipboardData.files.length; i++) {
